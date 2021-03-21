@@ -1,0 +1,26 @@
+* {
+    margin:0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.navbar {
+    display: flex;
+    height: 20px;
+    background-color: #000;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.navbar > div {
+    margin-left: 2px;
+    border-right: 1px solid #ffffff69;
+    height: 100%;
+    display:flex;
+    align-items: stretch;
+}
+.navbar-item {
+    color: #fff;
+    height:100%;
+}
