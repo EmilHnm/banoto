@@ -11,7 +11,7 @@ a {
     background-color: #000;
     height: 50px;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 .navbar > div {
     margin-left: 2px;
@@ -20,7 +20,18 @@ a {
     display:flex;
     align-items: stretch;
 }
-.navbar-item {
+.navbar-item, .log-button {
     color: #fff;
-    height:100%;
+    display: inline-block;
+    height: 47px;
+    line-height: 50px;
+    border-bottom: 3px solid transparent;
+    padding: 0px 10px;
+}
+.navbar-item:hover {
+    border-bottom: 3px solid orange;
+}
+.log-button:hover {
+    background-color: orange;
+    border-radius: 3px;
 }
