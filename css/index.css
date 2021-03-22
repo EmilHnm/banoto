@@ -31,6 +31,5 @@ a {
     border-bottom: 3px solid orange;
 }
 .log-button:hover {
-    background-color: orange;
-    border-radius: 3px;
+    color: orange;
 }
