@@ -7,6 +7,7 @@
     <title>Trang chủ</title>
     <link rel="stylesheet" href="css/index.css">
     <style>
+        /* page 1 */
         .first-main-page {
             display: flex;
             flex-direction: column;
@@ -53,6 +54,34 @@
             font-weight: bold;
             margin: 0px 2px;
         }
+        /* end page 1 */
+        /* page 2 */
+        .second-container {
+            display:flex;
+            flex-direction: column;
+            flex-grow: 1;
+            height: 100%;
+            margin: 40px 0px;
+            align-items: center;
+        }
+        .tab-title {
+            display: flex;
+            margin-top: 20px;
+            background-color: #d1d1d1;
+            padding: 3px;
+            border-radius: 40px;
+        }
+        .tab-link {
+            display: inline-flex;
+            padding: 5px 30px;
+            margin: 2px 2px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .tab-active {
+            background-color: orange;
+            border-radius: 40px;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +122,12 @@
     </div>
     <div class="second-container">
         <h2>Lựa chọn theo hãng xe</h2>
+        <div class="tab-title">
+            <div class="tab-link tab-active">Xe mới</div>
+            <div class="tab-link">Xe cũ</div>
+        </div>
+        <div id="new-car"></div>
+        <div id="old-car"></div>
     </div>
 </body>
 </html>
