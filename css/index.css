@@ -38,3 +38,10 @@ a {
 .log-button:hover {
     color: orange;
 }
+
+.inline-block {
+    display: inline-block !important;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
