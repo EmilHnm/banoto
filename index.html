@@ -162,7 +162,18 @@
             line-height: 25px;
         }
         /* page 4 */
-        
+        .fourth-container {
+            display:flex;
+            flex-direction: column;
+            width: 100%;
+            flex-grow: 1;
+            padding: 40px;
+            align-items: center;
+        }
+        .para, .fourth-container > div {
+            display: flex;
+            width: 40%;
+        }
     </style>
 </head>
 <body>
@@ -1151,9 +1162,12 @@
             </li>
         </ul>
     </div>
-    <div class="forth-container">
-        <div class="para"></div>
-        <div><img src="" alt="" srcset=""></div>
+    <div class="fourth-container">
+        <div><img src="image/research-and-compare.svg" alt="" srcset=""></div>
+        <div class="para">
+            <h2>Nghiên cứu, so sánh, tìm kiếm chiếc xe phù hợp với bạn</h2>
+            <p>Sử dụng nguồn dữ liệu của chúng tôi để so sánh, tìm kiếm chiếc xe mà bạn mong muốn.</p>
+        </div>
     </div>
 </body>
 </html>
