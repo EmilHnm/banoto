@@ -86,6 +86,11 @@
         }
         .tab-content {
             display: none;
+            animation: fadeinEff 2s;
+        }
+        @keyframes fadeinEff {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
         #new-car, #old-car {
             padding: 10px; 
@@ -96,7 +101,6 @@
             grid-template-columns: repeat(4,1fr);
         }
         .manu {
-            list-style: none;
             min-width: 150px;
             border-bottom: 1px solid transparent;
             margin: 2px 10px;
@@ -130,6 +134,10 @@
             flex-grow: 1;
             padding: 40px 0px;
             align-items: center;
+        }
+        .classify-list {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
         }
     </style>
 </head>
@@ -1045,7 +1053,14 @@
         <h3>Lựa chọn theo dòng xe</h3>
         <p>Chúng tôi hỗ trợ bạn lọc ra những chiếc xe hơi và xe tải tùy theo nhu cầu của bạn để bạn có thể lựa chọn chiếc xe tốt nhất mà bạn muốn</p>
         <ul class="classify-list">
-            <li class="classify"></li>
+            <li class="classify">
+                <a href="">
+                    <div class="classify-icon">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="classify-n"></div>
+                </a>
+            </li>
             <li class="classify"></li>
             <li class="classify"></li>
             <li class="classify"></li>

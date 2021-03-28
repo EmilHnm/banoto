@@ -45,3 +45,7 @@ a {
 .align-middle {
     vertical-align: middle !important;
 }
+
+ul, li {
+    list-style: none;
+}
