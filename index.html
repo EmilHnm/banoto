@@ -1249,11 +1249,11 @@
                     //['Ferrari','F8','SF90 Stradale']
                 ];
                 function showModel() {
-                    for (let i = 0; i < modelList.length; i++) {
-                        if (document.getElementById('manu-selection-list' == modelList[i][0]) {
-                            console.log(modelList[i][1]);
+                    for (let i = 1; i <= modelList.length; i++) {
+                        if (document.getElementById('manu-selection-list').value == modelList[i][0]) {
+                            console.log(modelList[i][0]);
+                            break;
                         }
-                        
                     }
                 }
             </script>
