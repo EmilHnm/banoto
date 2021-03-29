@@ -1168,7 +1168,7 @@
             <h2>Nghiên cứu, so sánh, tìm kiếm chiếc xe phù hợp với bạn</h2>
             <p>Sử dụng nguồn dữ liệu của chúng tôi để so sánh, tìm kiếm chiếc xe mà bạn mong muốn.</p><br>
             <form action="" method="post" name="manu">
-                <select id="manu-selection-list">
+                <select id="manu-selection-list" onchange="showModel()">
                     <option value="Acura">Acura</option>
                     <option value="Alfa Romeo">Alfa Romeo</option>
                     <option value="Audi">Audi</option>
@@ -1208,11 +1208,54 @@
                 <select name="model" id="model-list"></select>
             </form>
             <script>
-                var manu = document.getElementById("manu-selection-list").value;
+                function creatOptions() {
+                    
+                }
                 var modelList = [
                     ['Acura', 'ILX', 'MDX', 'NSX'],
                     ['Alfa Romeo', '4C', 'Giulia', 'Stelvio']
+                    ['Audi','A8','S8','TTS'],
+                    ['BMV','5 Series','7 Series','8 Series'],
+                    ['Buick','Enclave','Encore GX','Envision'],
+                    ['Cadillac','CT5','Escalade','XT6'],
+                    ['Chevrolet','Malibu','Silverado 3500HD','Traverse'],
+                    ['Chrysler','300','Pacifica','Voyager'],
+                    ['Dodge','Challenger','Durango','Journey'],
+                    ['FIAT','124 Spider','500L','500X'],
+                    ['Ford','Expedition','Mustang','Super Duty F-450'],
+                    ['Genesis','G80','G90','GV80'],
+                    ['GMC','Acadia','Canyon','Terrain'],
+                    ['Honda','Clarity','Passport','Pilot'],
+                    ['Hyundai','Elantra','Kona','Sonata'],
+                    ['INFINITI','Q50','QX50','QX60'],
+                    ['Jaguar','F-PACE','F-TYPE','XF'],
+                    ['Jeep','Cherokee','Gladiator','Renegade'],
+                    ['Kia','Sedona','Seltos','Soul'],
+                    ['Land Rover','Defender','Discovery','Discovery Sport'],
+                    ['Lexus','ES','IS','UX'],
+                    ['Lincoln','Aviator','Corsair','Nautilus'],
+                    //['Lotus','Evora'],
+                    ['Maserati','Ghibli','Levante','Quattroporte'],
+                    ['Mazda','Mazda3','Mazda6','MX-5 Miata'],
+                    ['Mercedes-Benz','GLC','GLE','GLS'],
+                    ['MINI','Clubman','Convertible','Countryman'],
+                    ['Mitsubishi','Mirage','Outlander','Outlander Sport'],
+                    ['Porsche','Cayenne','Macan','Panamera'],
+                    ['Ram','1500','2500','3500'],
+                    ['Subaru','Crosstrek','Forester','Impreza'],
+                    ['Toyota','Highlander','Sequoia','Sienna'],
+                    ['Volkswagen','Golf','Jetta','Passat'],
+                    ['Volvo','XC40','XC60','XC90'],
+                    //['Ferrari','F8','SF90 Stradale']
                 ];
+                function showModel() {
+                    for (let i = 0; i < modelList.length; i++) {
+                        if (document.getElementById('manu-selection-list' == modelList[i][0]) {
+                            console.log(modelList[i][1]);
+                        }
+                        
+                    }
+                }
             </script>
         </div>
     </div>
