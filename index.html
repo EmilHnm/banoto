@@ -25,6 +25,9 @@
         .first-container {
             margin: auto;
         }
+        .first-container h1 {
+            padding: 10px;
+        }
         .NewButton, .OldButton {
             display: inline-flex;
             width: 42.5%;
@@ -128,6 +131,16 @@
             font-weight: bold;
             color: #000;
         }
+        #show-btn {
+            background: linear-gradient(transparent, orange);
+            height: 30px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius:  0px 0px 20px 20px;
+        }
         /* page 3 */
         .third-container {
             display:flex;
@@ -182,7 +195,7 @@
             outline: none;
             appearance: none;
             background: url(image/icon/expand_more-24px.svg) no-repeat;
-            background-position:160px center ;
+            background-position: calc(100% - 10px) center;
         }
         .bnt-carmodel-submit {
             border: 1px solid orange;
@@ -214,7 +227,58 @@
             }
             .classify-list {
             grid-template-columns: repeat(2,1fr);
+            }
         }
+        @media screen and (max-width:613px) {
+            .NewButton, .OldButton, .SellCar {
+                display: block;
+                width:80%;
+                text-align: center;
+                margin: 10px auto;
+            }
+            h1 {
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 531px) {
+            .manu-list {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .classify-list {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .classify {
+                padding: 10px 20px;
+                margin: 10px;
+            }
+            .classify a{
+                display: flex;
+                align-items: center;
+            }
+            .classify-name {
+                margin-left: 5px;
+                font-size: 14px;
+            }
+            .classify-icon, .classify-name {
+                display: inline-flex;
+            }
+            .fourth-container {
+                display: block;
+            }
+            .fourth-container div {
+                display: block;
+                width: 100%;
+                padding: 0px;
+                margin: auto;
+            }
+            #manu-selection-list, #model-list, .bnt-carmodel-submit {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:341px) {
+            .classify-list {
+                padding: 0;
+            }
         }
     </style>
 </head>
@@ -224,12 +288,12 @@
         <nav class="navbar">
                 <div class="logo">
                     <a href="index.html">
-                        BANOTO
+                        Bán Ô Tô
                     </a>
                 </div>
                 <label for="nav-active" class="menu-button"><img src="image/icon/menu-24px.svg" alt="" srcset=""></label>
                 <input type="checkbox" name="" id="nav-active">
-                <div class="nav-content">
+                <div class="nav-content" style="margin:0">
                     <div class="main-navbar">
                         <a href="index.html" class="navbar-item navbutton-active">Mua xe</a>
                         <a href="" class="navbar-item">Bán xe</a>
@@ -335,7 +399,6 @@
                         </div>
                     </a>
                 </li>
-                
                 <li class="manu">
                     <a href="">
                         <div class="manu-content">
@@ -682,8 +745,8 @@
                                 Ferrari
                             </div>
                         </div>
-                    </li>
-                </a>
+                    </a>
+                </li>
             </ul>
         </div>
         <div id="old-car" class="tab-content">
@@ -1106,27 +1169,11 @@
                                 Ferrari
                             </div>
                         </div>
-                    </li>
-                </a>
+                    </a>
+                </li>
             </ul>
         </div>
-        <script>
-            document.getElementById("new-car").style.display="block";
-            function tabber(evt, model) {
-                let i, tabbercontain, tablinks;
-                
-                tabbercontain = document.getElementsByClassName("tab-content");
-                for (i = 0; i < tabbercontain.length; i++){
-                    tabbercontain[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tab-link");
-                for (i = 0; i < tablinks.length; i++){
-                    tablinks[i].className = tablinks[i].className.replace("tab-active", " ")
-                }
-                document.getElementById(model).style.display = "block";
-                evt.currentTarget.classList.add("tab-active");
-            }
-        </script>
+        <div id="show-btn">Xem thêm</div>
     </div>
     <div class="third-container">
         <h3>Lựa chọn theo dòng xe</h3>
@@ -1252,72 +1299,7 @@
                 <select name="model" id="model-list"></select>
                 <button type="submit" class="bnt-carmodel-submit">Tìm</button>
             </form>
-            <script>
-                function creatOptions(value) {
-                    var select = document.getElementById('model-list');
-                    var node = document.createElement("OPTION");
-                    var textNode = document.createTextNode(value);
-                    node.appendChild(textNode);
-                    node.value = value;
-                    node.id = value;
-                    select.appendChild(node);
-                }
-                var modelList = [
-                    ['Acura', 'ILX', 'MDX', 'NSX'],
-                    ['Alfa Romeo', '4C', 'Giulia', 'Stelvio'],
-                    ['Audi','A8','S8','TTS'],
-                    ['BMV','5 Series','7 Series','8 Series'],
-                    ['Buick','Enclave','Encore GX','Envision'],
-                    ['Cadillac','CT5','Escalade','XT6'],
-                    ['Chevrolet','Malibu','Silverado 3500HD','Traverse'],
-                    ['Chrysler','300','Pacifica','Voyager'],
-                    ['Dodge','Challenger','Durango','Journey'],
-                    ['FIAT','124 Spider','500L','500X'],
-                    ['Ford','Expedition','Mustang','Super Duty F-450'],
-                    ['Genesis','G80','G90','GV80'],
-                    ['GMC','Acadia','Canyon','Terrain'],
-                    ['Honda','Clarity','Passport','Pilot'],
-                    ['Hyundai','Elantra','Kona','Sonata'],
-                    ['INFINITI','Q50','QX50','QX60'],
-                    ['Jaguar','F-PACE','F-TYPE','XF'],
-                    ['Jeep','Cherokee','Gladiator','Renegade'],
-                    ['Kia','Sedona','Seltos','Soul'],
-                    ['Land Rover','Defender','Discovery','Discovery Sport'],
-                    ['Lexus','ES','IS','UX'],
-                    ['Lincoln','Aviator','Corsair','Nautilus'],
-                    //['Lotus','Evora'],
-                    ['Maserati','Ghibli','Levante','Quattroporte'],
-                    ['Mazda','Mazda3','Mazda6','MX-5 Miata'],
-                    ['Mercedes-Benz','GLC','GLE','GLS'],
-                    ['MINI','Clubman','Convertible','Countryman'],
-                    ['Mitsubishi','Mirage','Outlander','Outlander Sport'],
-                    ['Porsche','Cayenne','Macan','Panamera'],
-                    ['Ram','1500','2500','3500'],
-                    ['Subaru','Crosstrek','Forester','Impreza'],
-                    ['Toyota','Highlander','Sequoia','Sienna'],
-                    ['Volkswagen','Golf','Jetta','Passat'],
-                    ['Volvo','XC40','XC60','XC90'],
-                    //['Ferrari','F8','SF90 Stradale']
-                ];
-                function showModel() {
-                    document.getElementById('model-list').innerHTML ='';
-                    for (let i = 1; i <= modelList.length; i++) {
-                        if ( modelList[i][0] == document.getElementById('manu-selection-list').value) {
-                            for (let j = 1; j < 4; j++) {
-                                creatOptions(modelList[i][j]);
-                            }
-                            break;
-                        } else if ( document.getElementById('manu-selection-list').value == 'Ferrari') {
-                            creatOptions('F8');
-                            creatOptions('SF90 Stradale');
-                            break;
-                        } else if ( document.getElementById('manu-selection-list').value == 'Lotus') {
-                            creatOptions('Evora');
-                            break;
-                        }
-                    }
-                }
-            </script>
+            
         </div>
     </div>
     <footer>
@@ -1328,6 +1310,7 @@
         </div>
         <div class="right-footer">
             <p style="font-weight: bold; margin-bottom: 10px;">Liên kết mạng xã hội</p>
+            <input type="checkbox" name="" id="nav-active">
             <div class="social-media">
                 <div class="facebook">
                     <a aria-label="facebook" href="https://www.facebook.com/TrueCar" class="social-icon"><svg viewBox="0 0 24 24" class="icon _133u1t1 icon-fill-default" style="width:24px;height:24px;stroke-width:1" data-qa="IconFacebook"><path d="M19.51 2.11h-15a2.77 2.77 0 0 0-2.79 2.77v15a2.77 2.77 0 0 0 2.77 2.77h7.4v-7.33H10a.45.45 0 0 1-.45-.45v-2.36a.45.45 0 0 1 .45-.45h1.9V9.77a3.74 3.74 0 0 1 4-4.1h1.94a.45.45 0 0 1 .45.45v2a.45.45 0 0 1-.45.45h-1.2c-1.29 0-1.54.61-1.54 1.51v2h2.83a.45.45 0 0 1 .45.5l-.28 2.37a.45.45 0 0 1-.45.4h-2.54v7.34h4.41a2.77 2.77 0 0 0 2.77-2.77v-15a2.77 2.77 0 0 0-2.77-2.77zm0 0"></path></svg></a>
@@ -1346,6 +1329,127 @@
     </footer>
     <div id="back-to-top" onclick="backToTop();">
         <img src="image/icon/expand_less-24px.svg" alt="" srcset="" width="40" >
-    </div> 
+    </div>
+    <script>
+        function creatOptions(value) {
+            var select = document.getElementById('model-list');
+            var node = document.createElement("OPTION");
+            var textNode = document.createTextNode(value);
+            node.appendChild(textNode);
+            node.value = value;
+            node.id = value;
+            select.appendChild(node);
+        }
+        var modelList = [
+            ['Acura', 'ILX', 'MDX', 'NSX'],
+            ['Alfa Romeo', '4C', 'Giulia', 'Stelvio'],
+            ['Audi','A8','S8','TTS'],
+            ['BMV','5 Series','7 Series','8 Series'],
+            ['Buick','Enclave','Encore GX','Envision'],
+            ['Cadillac','CT5','Escalade','XT6'],
+            ['Chevrolet','Malibu','Silverado 3500HD','Traverse'],
+            ['Chrysler','300','Pacifica','Voyager'],
+            ['Dodge','Challenger','Durango','Journey'],
+            ['FIAT','124 Spider','500L','500X'],
+            ['Ford','Expedition','Mustang','Super Duty F-450'],
+            ['Genesis','G80','G90','GV80'],
+            ['GMC','Acadia','Canyon','Terrain'],
+            ['Honda','Clarity','Passport','Pilot'],
+            ['Hyundai','Elantra','Kona','Sonata'],
+            ['INFINITI','Q50','QX50','QX60'],
+            ['Jaguar','F-PACE','F-TYPE','XF'],
+            ['Jeep','Cherokee','Gladiator','Renegade'],
+            ['Kia','Sedona','Seltos','Soul'],
+            ['Land Rover','Defender','Discovery','Discovery Sport'],
+            ['Lexus','ES','IS','UX'],
+            ['Lincoln','Aviator','Corsair','Nautilus'],
+            //['Lotus','Evora'],
+            ['Maserati','Ghibli','Levante','Quattroporte'],
+            ['Mazda','Mazda3','Mazda6','MX-5 Miata'],
+            ['Mercedes-Benz','GLC','GLE','GLS'],
+            ['MINI','Clubman','Convertible','Countryman'],
+            ['Mitsubishi','Mirage','Outlander','Outlander Sport'],
+            ['Porsche','Cayenne','Macan','Panamera'],
+            ['Ram','1500','2500','3500'],
+            ['Subaru','Crosstrek','Forester','Impreza'],
+            ['Toyota','Highlander','Sequoia','Sienna'],
+            ['Volkswagen','Golf','Jetta','Passat'],
+            ['Volvo','XC40','XC60','XC90'],
+            //['Ferrari','F8','SF90 Stradale']
+        ];
+        function showModel() {
+            document.getElementById('model-list').innerHTML ='';
+            for (let i = 1; i <= modelList.length; i++) {
+                if ( modelList[i][0] == document.getElementById('manu-selection-list').value) {
+                    for (let j = 1; j < 4; j++) {
+                        creatOptions(modelList[i][j]);
+                    }
+                    break;
+                } else if ( document.getElementById('manu-selection-list').value == 'Ferrari') {
+                    creatOptions('F8');
+                    creatOptions('SF90 Stradale');
+                    break;
+                } else if ( document.getElementById('manu-selection-list').value == 'Lotus') {
+                    creatOptions('Evora');
+                    break;
+                }
+            }
+        }
+    </script> 
+    <script>
+        document.getElementById("new-car").style.display="block";
+        function tabber(evt, model) {
+            let i, tabbercontain, tablinks;
+            
+            tabbercontain = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabbercontain.length; i++){
+                tabbercontain[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace("tab-active", " ")
+            }
+            document.getElementById(model).style.display = "block";
+            evt.currentTarget.classList.add("tab-active");
+        }
+    </script>
+    <script>
+        window.addEventListener("resize",()=>{
+            if (window.innerWidth <= 531) {
+                var list1 = document.getElementsByClassName("manu-list")[0];
+                var list2 = document.getElementsByClassName("manu-list")[1];
+                for (let i = 4; i < list1.children.length; i++) {
+                    list1.children[i].style.display = "none";
+                    list2.children[i].style.display = "none"
+                }
+                document.getElementById("show-btn").style.display = "block";
+            } else {
+                var list1 = document.getElementsByClassName("manu-list")[0];
+                var list2 = document.getElementsByClassName("manu-list")[1];
+                for (let i = 4; i < list1.children.length; i++) {
+                    list1.children[i].style.display = "block";
+                    list2.children[i].style.display = "block"
+                }
+                document.getElementById("show-btn").style.display = "none";
+            }
+        });
+        document.getElementById("show-btn").addEventListener("click",() =>{
+            var list1 = document.getElementsByClassName("manu-list")[0];
+            var list2 = document.getElementsByClassName("manu-list")[1];
+            if (list1.children[10].style.display == "none" || list2.children[10].style.display == "none") {
+                for (let i = 4; i < list1.children.length; i++) {
+                    list1.children[i].style.display = "block";
+                    list2.children[i].style.display = "block"
+                }
+                document.getElementById("show-btn").innerText = "Thu gọn";
+            } else if (document.getElementById("show-btn").innerText == "Thu gọn") {
+                for (let i = 4; i < list1.children.length; i++) {
+                    list1.children[i].style.display = "none";
+                    list2.children[i].style.display = "none"
+                }
+                document.getElementById("show-btn").innerText = "Xem thêm"
+            }
+        });
+    </script>
 </body>
 </html>
