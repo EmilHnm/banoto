@@ -1415,7 +1415,9 @@
     </script>
     <script>
         window.addEventListener("resize",()=>{
-            if (window.innerWidth <= 531) {
+            if (document.getElementById("show-btn").innerText == "Thu gọn") {
+                
+            } else if (window.innerWidth <= 531) {
                 var list1 = document.getElementsByClassName("manu-list")[0];
                 var list2 = document.getElementsByClassName("manu-list")[1];
                 for (let i = 4; i < list1.children.length; i++) {
