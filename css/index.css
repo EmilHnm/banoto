@@ -13,7 +13,7 @@ a {
 .navbar {
     display: flex;
     height: 20px;
-    background-color: #000;
+    background-color: #000000;
     height: 50px;
     justify-content: center;
 }
@@ -38,19 +38,68 @@ a {
 .log-button:hover {
     color: orange;
 }
-
+.menu-button {
+    display: none;
+}
 .inline-block {
     display: inline-block !important;
 }
 .align-middle {
     vertical-align: middle !important;
 }
-
+#navbar {
+    width: 100%;
+}
+#nav-active {
+    display:none;
+}
 ul, li {
     list-style: none;
 }
 h2, h3, h4 {
     font-size: 1.5em;
+}
+@media screen and (max-width: 965px) {
+    .navbar > div {
+        border-right: none;
+    }
+    .menu-button {
+        display: block;
+        position: absolute;
+        top: 13px;
+        right: 20px;
+        z-index: 2;
+        text-align: center;
+        width: 50px;
+    }
+    .nav-content {
+        z-index: 1;
+        position:fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(-120deg, #ffa600 , #000 );
+        clip-path: circle(20px at calc(100% - 47px) 26px);
+        transition: all 0.3s ease-in-out;
+    }
+    #nav-active:checked ~ .nav-content {
+        clip-path: circle(75%);
+    }
+    .main-navbar {
+        position:absolute;
+        left: 50%;
+        transform:translate(-50%, 50%);
+        text-align:center;
+    }
+    .navbar-item {
+        font-size: 30px;
+        font-weight: 200;
+        color: #fff;
+        display: block;
+        position: relative;
+    } 
+
 }
 /* footer */
 footer {
